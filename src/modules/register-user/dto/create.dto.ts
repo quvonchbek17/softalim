@@ -6,8 +6,7 @@ export class UserCreateDto {
     @IsString()
     readonly fullname: string;
 
-    @ApiProperty({name: "phone", type: "string", required: true, example: "998912223344"})
+    @ApiProperty({name: "phone", type: "string", required: true, example: "+998912223344"})
     @IsString()
-    @Matches("/^998[123456789][012345789][0-9]{7}$/")
     readonly phone: string;
 }
