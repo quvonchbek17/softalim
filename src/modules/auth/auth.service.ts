@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AdminsRepository } from 'src/entities/admins.entity';
 import { JwtService } from '@nestjs/jwt';
-import { AuthResponse } from 'src/interface/Sign.interface';
+import { AuthResponse } from 'src/interface/sign.interface';
 import { Sign } from './dto/dto';
 import { compareSync, hashSync } from 'bcrypt';
 import { JwtStrategy } from './strategies/jwt.strategy';

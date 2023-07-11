@@ -57,7 +57,7 @@ export class TeachersController {
         summary: "O'qituvchi qo'shish"
     })
     async Create(@Req() req: Request, @Body() body: TeacherCreateDto, @UploadedFile() image: Express.Multer.File) {
-           image.path = "http://localhost:4545/api/v1/files/" + image.path.split("\\").at(-1)
+           image.path = "https://softalim.mquvonchbek.uz/api/v1/files/" + image.path.split("\\").at(-1)
         return await this.teachersService.CreateTeacher(req.userId, body, image)
     }
 
@@ -89,7 +89,7 @@ export class TeachersController {
     })
     async Update(@Req() req: Request, @Body() body: TeacherUpdateDto, @UploadedFile() image: Express.Multer.File) {
          if(image){
-            image.path = "http://localhost:4545/api/v1/files/" + image.path.split("\\").at(-1)
+            image.path = "https://softalim.mquvonchbek.uz/api/v1/files/" + image.path.split("\\").at(-1)
          }
         return await this.teachersService.updateTeacher(body, image)
     }

@@ -62,7 +62,7 @@ export class NewsController {
         }
     })
     async Create(@Req() req: Request, @Body() body: NewsCreateDto, @UploadedFile() image: Express.Multer.File) {
-           image.path = "http://localhost:4545/api/v1/files/" + image.path.split("\\").at(-1)
+           image.path = "https://softalim.mquvonchbek.uz/api/v1/files/" + image.path.split("\\").at(-1)
         return await this.newsService.CreateNews(body, image)
     }
 
@@ -95,7 +95,7 @@ export class NewsController {
     })
     async Update(@Req() req: Request, @Body() body: NewsUpdateDto, @UploadedFile() image: Express.Multer.File) {
          if(image){
-            image.path = "http://localhost:4545/api/v1/files/" + image.path.split("\\").at(-1)
+            image.path = "https://softalim.mquvonchbek.uz/api/v1/files/" + image.path.split("\\").at(-1)
          }
         return await this.newsService.updateNews(body, image)
     }
