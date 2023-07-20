@@ -18,7 +18,7 @@ import {
     ApiBadRequestResponse
 } from '@nestjs/swagger'
 import { Sign } from "./dto/dto";
-import { AuthResponse } from "src/interface/sign.interface";
+import { AuthResponse } from "../../../src/interface/sign.interface";
 import { JwtAuthGuard } from "./guards/jwt.auth.guard";
 
 @Controller('auth')
