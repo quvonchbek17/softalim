@@ -1,6 +1,6 @@
 import { BadRequestException, Controller, Get, Param, Res } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import path from 'path';
+import * as path from 'path';
 
 @ApiTags("/api/v1/files")
 @Controller('files')

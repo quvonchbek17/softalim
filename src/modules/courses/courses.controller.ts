@@ -7,7 +7,7 @@ import { diskStorage } from 'multer';
 import { CourseUpdateDto } from './dto/update.dto';
 import { CourseDeleteDto } from './dto/delete.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt.auth.guard';
-import path from 'path';
+import * as path from 'path';
 @ApiTags("/api/v1/courses")
 @Controller('courses')
 export class CoursesController {
