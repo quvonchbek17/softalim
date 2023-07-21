@@ -7,6 +7,7 @@ import { diskStorage } from 'multer';
 import { NewsUpdateDto } from './dto/update.dto';
 import { NewsDeleteDto } from './dto/delete.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt.auth.guard';
+import path from 'path';
 @ApiTags("/api/v1/news")
 @Controller('news')
 export class NewsController {
@@ -40,7 +41,7 @@ export class NewsController {
     @ApiConsumes('multipart/form-data')
     @UseInterceptors(FileInterceptor("image",{
         storage: diskStorage({
-            destination: '../uploads/images',
+            destination: path.join(process.cwd(), "..", "uploads"),
             filename: (req, file, cb) => {
               const randomName = Array(32)
                 .fill(null)
@@ -72,7 +73,7 @@ export class NewsController {
     @ApiConsumes('multipart/form-data')
     @UseInterceptors(FileInterceptor("image",{
         storage: diskStorage({
-            destination: '../uploads/images',
+            destination: path.join(process.cwd(), "..", "uploads"),
             filename: (req, file, cb) => {
               const randomName = Array(32)
                 .fill(null)

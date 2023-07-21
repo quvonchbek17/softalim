@@ -7,6 +7,7 @@ import { diskStorage } from 'multer';
 import { CourseUpdateDto } from './dto/update.dto';
 import { CourseDeleteDto } from './dto/delete.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt.auth.guard';
+import path from 'path';
 @ApiTags("/api/v1/courses")
 @Controller('courses')
 export class CoursesController {
@@ -39,7 +40,8 @@ export class CoursesController {
     @ApiConsumes('multipart/form-data')
     @UseInterceptors(FileInterceptor("image",{
         storage: diskStorage({
-            destination: '../uploads/images',
+            destination: path.join(process.cwd(), "..", "uploads",
+            "images"),
             filename: (req, file, cb) => {
               const randomName = Array(32)
                 .fill(null)
@@ -70,7 +72,7 @@ export class CoursesController {
     @ApiConsumes('multipart/form-data')
     @UseInterceptors(FileInterceptor("image",{
         storage: diskStorage({
-            destination: '../uploads/images',
+            destination: path.join(process.cwd(), "..", "uploads", "images"),
             filename: (req, file, cb) => {
               const randomName = Array(32)
                 .fill(null)

@@ -20,7 +20,8 @@ export class TeacherUpdateDto {
     readonly specialty: string;
 
     @ApiProperty({name: "experience", type: "integer", required: false, example: 18})
-    @IsString()
+    @Type(() => Number)
+    @IsNumber()
     readonly experience: number;
 
     @ApiProperty({ type: 'string', format: 'binary', required: false })

@@ -1,5 +1,6 @@
 import { IsNotEmpty, IsNumber, IsString, MaxLength, MinLength, IsOptional, Length, IsArray, IsBoolean } from "class-validator"
 import { ApiProperty } from "@nestjs/swagger";
+import { Type } from "class-transformer";
 
 export class ResultUpdateDto {
 
@@ -12,11 +13,13 @@ export class ResultUpdateDto {
     readonly fullname: string;
 
     @ApiProperty({name: "year", type: "integer", required: false, example: 2023})
-    @IsString()
+    @Type(() => Number)
+    @IsNumber()
     readonly year: number;
 
     @ApiProperty({name: "point", type: "integer", required: false, example: 109})
-    @IsString()
+    @Type(() => Number)
+    @IsNumber()
     readonly point: number;
 
     @ApiProperty({name: "university", type: "string", required: false, example: "O'zmu"})
@@ -40,12 +43,14 @@ export class IeltsUpdateDto {
     @IsString()
     readonly fullname: string;
 
-    @ApiProperty({name: "year", type: "int", required: false, example: 2023})
-    @IsString()
+    @ApiProperty({name: "year", type: "integer", required: false, example: 2023})
+    @Type(() => Number)
+    @IsNumber()
     readonly year: number;
 
-    @ApiProperty({name: "point", type: "int", required: false, example: 9.0})
-    @IsString()
+    @ApiProperty({name: "point", type: "float", required: false, example: 9.0})
+    @Type(() => Number)
+    @IsNumber()
     readonly point: number;
 
     @ApiProperty({name: "university", type: "string", required: false, example: "Oxford Ielts"})
