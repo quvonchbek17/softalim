@@ -96,7 +96,7 @@ export class NewsController {
     })
     async Update(@Req() req: Request, @Body() body: NewsUpdateDto, @UploadedFile() image: Express.Multer.File) {
          if(image){
-            image.path = "https://softalim.mquvonchbek.uz/api/v1/files/" + image.path.split("\\").at(-1)
+            image.path = "https://softalim.mquvonchbek.uz/api/v1/files/images" + image.path.split("/").at(-1)
          }
         return await this.newsService.updateNews(body, image)
     }
