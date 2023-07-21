@@ -63,7 +63,7 @@ export class NewsController {
         }
     })
     async Create(@Req() req: Request, @Body() body: NewsCreateDto, @UploadedFile() image: Express.Multer.File) {
-           image.path = "https://softalim.mquvonchbek.uz/api/v1/files/" + image.path.split("\\").at(-1)
+        image.path = "https://softalim.mquvonchbek.uz/api/v1/files/images" + image.path.split("/").at(-1)
         return await this.newsService.CreateNews(body, image)
     }
 

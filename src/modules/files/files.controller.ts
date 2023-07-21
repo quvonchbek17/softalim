@@ -7,10 +7,10 @@ import * as path from 'path';
 export class FilesController {
     constructor(){}
 
-    @Get("/:filename")
-    async GetFile(@Param("filename") filename: string, @Res() res) {
+    @Get("/:folder/:filename")
+    async GetFile(@Param("filename") filename: string, @Param("folder") folder: string, @Res() res) {
         try {
-            return res.sendFile(filename, { root: path.join(process.cwd(), "..", "uploads") })
+            return res.sendFile(filename, { root: path.join(process.cwd(), "..", "uploads", folder) })
         } catch (error) {
             throw new BadRequestException(error.message);
         }
