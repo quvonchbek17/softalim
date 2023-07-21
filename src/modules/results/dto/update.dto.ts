@@ -11,11 +11,11 @@ export class ResultUpdateDto {
     @IsString()
     readonly fullname: string;
 
-    @ApiProperty({name: "year", type: "int", required: false, example: 2023})
+    @ApiProperty({name: "year", type: "integer", required: false, example: 2023})
     @IsString()
     readonly year: number;
 
-    @ApiProperty({name: "point", type: "int", required: false, example: 109})
+    @ApiProperty({name: "point", type: "integer", required: false, example: 109})
     @IsString()
     readonly point: number;
 

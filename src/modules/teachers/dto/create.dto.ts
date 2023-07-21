@@ -15,7 +15,7 @@ export class TeacherCreateDto {
     @IsString()
     readonly specialty: string;
 
-    @ApiProperty({name: "experience", type: "int", required: true, example: 18})
+    @ApiProperty({name: "experience", type: "integer", required: true, example: 18})
     @IsNumber()
     readonly experience: number;
 

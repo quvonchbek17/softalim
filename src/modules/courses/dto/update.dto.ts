@@ -15,7 +15,7 @@ export class CourseUpdateDto {
     @IsString()
     readonly desc: string;
 
-    @ApiProperty({name: "price", type: "bigint", required: false, example: 1200000})
+    @ApiProperty({name: "price", type: "integer", required: false, example: 1200000})
     @IsString()
     readonly price: bigint;
 

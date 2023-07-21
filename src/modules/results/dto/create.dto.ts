@@ -6,11 +6,11 @@ export class ResultCreateDto {
     @IsString()
     readonly fullname: string;
 
-    @ApiProperty({name: "year", type: "int", required: true, example: 2023})
+    @ApiProperty({name: "year", type: "integer", required: true, example: 2023})
     @IsString()
     readonly year: number;
 
-    @ApiProperty({name: "point", type: "int", required: true, example: 145.1})
+    @ApiProperty({name: "point", type: "integer", required: true, example: 145.1})
     @IsString()
     readonly point: number;
 
@@ -28,11 +28,11 @@ export class IeltsCreateDto {
     @IsString()
     readonly fullname: string;
 
-    @ApiProperty({name: "year", type: "int", required: true, example: 2023})
+    @ApiProperty({name: "year", type: "integer", required: true, example: 2023})
     @IsString()
     readonly year: number;
 
-    @ApiProperty({name: "point", type: "int", required: true, example: 8.5})
+    @ApiProperty({name: "point", type: "integer", required: true, example: 8.5})
     @IsString()
     readonly point: number;
 
