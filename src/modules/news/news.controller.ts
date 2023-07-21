@@ -41,7 +41,7 @@ export class NewsController {
     @ApiConsumes('multipart/form-data')
     @UseInterceptors(FileInterceptor("image",{
         storage: diskStorage({
-            destination: path.join(process.cwd(), "..", "uploads"),
+            destination: path.join(process.cwd(), "..", "uploads", "images"),
             filename: (req, file, cb) => {
               const randomName = Array(32)
                 .fill(null)
@@ -73,7 +73,7 @@ export class NewsController {
     @ApiConsumes('multipart/form-data')
     @UseInterceptors(FileInterceptor("image",{
         storage: diskStorage({
-            destination: path.join(process.cwd(), "..", "uploads"),
+            destination: path.join(process.cwd(), "..", "uploads", "images"),
             filename: (req, file, cb) => {
               const randomName = Array(32)
                 .fill(null)
