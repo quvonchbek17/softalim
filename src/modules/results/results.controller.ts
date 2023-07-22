@@ -47,7 +47,6 @@ export class ResultsController {
         }
     })
     async Create(@Req() req: Request, @Body() body: ResultCreateDto, ) {
-
         return await this.resultsService.CreateResult(body, false)
     }
 
@@ -66,7 +65,6 @@ export class ResultsController {
         }
     })
     async CreateIelts(@Req() req: Request, @Body() body: IeltsCreateDto, ) {
-
         return await this.resultsService.CreateResult(body, true)
     }
 

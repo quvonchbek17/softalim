@@ -40,7 +40,7 @@ import { ResultsRepository } from 'src/entities/results.entity';
         };
     }
     async CreateResult(
-      body: ResultCreateDto | IeltsCreateDto,
+      body: any,
       isIelts: boolean
     ) {
       try {
@@ -63,7 +63,7 @@ import { ResultsRepository } from 'src/entities/results.entity';
           .values({
             fullname: body.fullname,
             point: body.point,
-            status: body instanceof ResultCreateDto ? body.status : "",
+            status: body.status,
             university: body.university,
             year: body.year,
             isIelts: isIelts
@@ -92,7 +92,7 @@ import { ResultsRepository } from 'src/entities/results.entity';
       }
     }
 
-    async updateResult(body:ResultUpdateDto | IeltsUpdateDto) {
+    async updateResult(body: any) {
        try {
         let result = await ResultsRepository.findOne({
           where: { id: body.id },
@@ -105,7 +105,7 @@ import { ResultsRepository } from 'src/entities/results.entity';
         if(body){
           result.fullname = body.fullname || result.fullname;
           result.year = body.year || result.year;
-          result.status = (body instanceof ResultCreateDto && body.status) ? body.status : result.status;
+          result.status = body.status || result.status;
           result.point = body.point || result.point;
           result.university = body.university || result.university;
           result.updated_at = new Date();
