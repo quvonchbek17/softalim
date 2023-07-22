@@ -17,7 +17,7 @@ export class CourseUpdateDto {
 
     @ApiProperty({name: "price", type: "integer", required: false, example: 1200000})
     @Type(() => Number)
-    @IsString()
+    @IsNumber()
     readonly price: bigint;
 
     @ApiProperty({ type: 'string', format: 'binary', required: false })
