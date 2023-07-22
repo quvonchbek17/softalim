@@ -63,6 +63,7 @@ export class CoursesService {
           name: body.name,
           desc: body.desc,
           price: body.price,
+          view: 0,
           imgUrl: file.path || 'https://picsum.photos/500/500',
         })
         .returning(['id'])
