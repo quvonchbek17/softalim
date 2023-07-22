@@ -52,8 +52,18 @@ export class CoursesService {
         },
       });
 
+      let courseName = await CoursesRepository.findOne({
+        where: {
+          name: body.name
+        },
+      });
+
       if (course) {
         throw new ConflictException("Bu ma'lumotlar avval qo'shilgan");
+      }
+
+      if (courseName) {
+        throw new ConflictException("Bu nomdagi kurs avval qo'shilgan");
       }
 
       const newCourse = await CoursesRepository.createQueryBuilder()
