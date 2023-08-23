@@ -40,20 +40,24 @@ export class IeltsUpdateDto {
     readonly id: string;
 
     @ApiProperty({name: "fullname", type: "string", required: false, example: "Sherali Jo'rayev"})
+    @IsOptional()
     @IsString()
     readonly fullname: string;
 
     @ApiProperty({name: "year", type: "integer", required: false, example: 2023})
     @Type(() => Number)
+    @IsOptional()
     @IsNumber()
     readonly year: number;
 
     @ApiProperty({name: "point", type: "float", required: false, example: 9.0})
     @Type(() => Number)
+    @IsOptional()
     @IsNumber()
     readonly point: number;
 
     @ApiProperty({name: "university", type: "string", required: false, example: "Oxford Ielts"})
+    @IsOptional()
     @IsString()
     readonly university: string;;
 

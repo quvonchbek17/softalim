@@ -8,14 +8,17 @@ export class NewsUpdateDto {
     readonly id: string;
 
     @ApiProperty({name: "title", type: "string", required: false, example: "Rasman: Qurbon hayiti 28 iyun kuni nishonlanadi"})
+    @IsOptional()
     @IsString()
     readonly title: string;
 
     @ApiProperty({name: "desc", type: "string", required: false, example: "news description"})
+    @IsOptional()
     @IsString()
     readonly desc: string;
 
     @ApiProperty({ type: 'string', format: 'binary', required: false })
+    @IsOptional()
     image: Express.Multer.File
 
 }

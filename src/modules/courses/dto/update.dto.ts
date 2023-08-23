@@ -8,18 +8,22 @@ export class CourseUpdateDto {
     readonly id: string;
 
     @ApiProperty({name: "name", type: "string", required: false, example: "Matematika"})
+    @IsOptional()
     @IsString()
     readonly name: string;
 
     @ApiProperty({name: "desc", type: "string", required: false, example: "kurs haqida description"})
+    @IsOptional()
     @IsString()
     readonly desc: string;
 
     @ApiProperty({name: "price", type: "integer", required: false, example: 1200000})
     @Type(() => Number)
+    @IsOptional()
     @IsNumber()
     readonly price: bigint;
 
     @ApiProperty({ type: 'string', format: 'binary', required: false })
+    @IsOptional()
     image: Express.Multer.File
 }

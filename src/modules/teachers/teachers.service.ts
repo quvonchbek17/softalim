@@ -60,7 +60,7 @@ export class TeachersService {
           desc: body.desc,
           specialty: body.specialty,
           experience: body.experience,
-          imgUrl: file.path || "https://picsum.photos/500/500"
+          imgUrl: file?.path || "https://picsum.photos/500/500"
         })
         .returning(['id'])
         .execute();
@@ -120,12 +120,14 @@ export class TeachersService {
         .execute()
         this.filesService.deleteFiles("images", filename)
       }
+      console.log(file);
+      
 
       if(body){
         teacher.fullname = body.fullname || teacher.fullname;
         teacher.desc = body.desc || teacher.desc;
         teacher.experience = body.experience || teacher.experience;
-        teacher.imgUrl = body.image.path || teacher.imgUrl;
+        teacher.imgUrl = file?.path || teacher.imgUrl;
         teacher.specialty = body.specialty || teacher.specialty;
         teacher.updated_at = new Date();
         await TeachersRepository.save(teacher);
