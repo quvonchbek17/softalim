@@ -120,9 +120,6 @@ export class TeachersService {
         .execute()
         this.filesService.deleteFiles("images", filename)
       }
-      console.log(file);
-      
-
       if(body){
         teacher.fullname = body.fullname || teacher.fullname;
         teacher.desc = body.desc || teacher.desc;
