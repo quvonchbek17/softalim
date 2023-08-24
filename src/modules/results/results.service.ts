@@ -103,11 +103,11 @@ import { ResultsRepository } from 'src/entities/results.entity';
         }
 
         if(body){
-          result.fullname = body.fullname || result.fullname;
-          result.year = body.year || result.year;
-          result.status = body.status || result.status;
-          result.point = body.point || result.point;
-          result.university = body.university || result.university;
+          result.fullname = body?.fullname || result.fullname;
+          result.year = body?.year || result.year;
+          result.status = body?.status || result.status;
+          result.point = body?.point || result.point;
+          result.university = body?.university || result.university;
           result.updated_at = new Date();
           await ResultsRepository.save(result);
         }

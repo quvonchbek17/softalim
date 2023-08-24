@@ -139,10 +139,10 @@ export class CoursesService {
         this.filesService.deleteFiles('images', filename);
       }
       if (body) {
-        course.name = body.name || course.name;
-        course.desc = body.desc || course.desc;
-        course.price = body.price || course.price;
-        course.imgUrl = file.path || course.imgUrl;
+        course.name = body?.name || course.name;
+        course.desc = body?.desc || course.desc;
+        course.price = body?.price || course.price;
+        course.imgUrl = file?.path || course.imgUrl;
         course.updated_at = new Date();
         await CoursesRepository.save(course);
       }

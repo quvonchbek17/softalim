@@ -121,11 +121,11 @@ export class TeachersService {
         this.filesService.deleteFiles("images", filename)
       }
       if(body){
-        teacher.fullname = body.fullname || teacher.fullname;
-        teacher.desc = body.desc || teacher.desc;
-        teacher.experience = body.experience || teacher.experience;
+        teacher.fullname = body?.fullname || teacher.fullname;
+        teacher.desc = body?.desc || teacher.desc;
+        teacher.experience = body?.experience || teacher.experience;
         teacher.imgUrl = file?.path || teacher.imgUrl;
-        teacher.specialty = body.specialty || teacher.specialty;
+        teacher.specialty = body?.specialty || teacher.specialty;
         teacher.updated_at = new Date();
         await TeachersRepository.save(teacher);
       }

@@ -134,7 +134,7 @@ import { FilesService } from '../files/files.service';
         if(body){
           news.title = body.title || news.title;
           news.desc = body.desc || news.desc;
-          news.imgUrl = file.path || news.imgUrl;
+          news.imgUrl = file?.path || news.imgUrl;
           news.updated_at = new Date();
           await NewsRepository.save(news);
         }
